@@ -1,0 +1,4 @@
+# Keep GitHub language statistics focused on source code.
+*.ipynb linguist-generated=true
+experiments/**/case_*/*.json linguist-generated=true
+results/prism_smoke/**/*.json linguist-generated=true
