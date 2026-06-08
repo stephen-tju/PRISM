@@ -1,0 +1,22 @@
+{
+    "response_history_size": 128,
+    "response_recency_decay": 0.96,
+    "prompt_similarity_sigma": 256.0,
+    "response_length_prior": 1.0,
+    "fallback_response_len": 256,
+    "response_prediction_mode": "expectation",
+    "random_seed": 7,
+    "routing_prefill_alpha": 0.000001,
+    "routing_decode_beta": 0.001,
+    "routing_heterogeneity_weight": 1.0,
+    "routing_congestion_weight": 1.0,
+    "slo_seconds": 30.0,
+    "per_token_memory_bytes": 1.0,
+    "peak_memory_capacity_tokens": 8192.0,
+    "scale_up_memory_threshold": 0.85,
+    "scale_down_memory_threshold": 0.2,
+    "scaling_violation_tolerance": 0.2,
+    "adaptive_scaling_interval": 10.0,
+    "instance_cold_start_seconds": 0.0,
+    "scaling_cooldown_seconds": 0.0
+}

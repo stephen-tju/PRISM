@@ -1,0 +1,44 @@
+{
+    "request_config": {
+        "request_num": 2800,
+        "dataset": "ShareGPT",
+        "datasets_path": "../data/datasets/",
+        "dataset_file": "cleaned.csv",
+        "random_prompt_lens_mean": 0,
+        "random_prompt_lens_range": 0,
+        "random_response_lens_mean": 0,
+        "random_response_lens_range": 0,
+        "mixing_propotion": 0.5,
+        "workload": "poisson",
+        "workloads_path": "../data/workloads/",
+        "scale": 1.0,
+        "qps": 9.5,
+        "coefficient_variation": 0.0,
+        "seed": 7,
+        "data_path": "../data/datasets/ShareGPT/cleaned.csv"
+    },
+    "profile_config": {
+        "model_name": "meta-llama/Llama-2-7b-hf",
+        "result_dir": "../results/cases/",
+        "case_path": "../results/cases/case_106"
+    },
+    "instance_config": {
+        "backend_framework": "vLLM",
+        "ignore_eos": true,
+        "stream": true,
+        "temperature": 0.0,
+        "best_of": 1,
+        "top_k": 1,
+        "model_name": "meta-llama/Llama-2-7b-hf",
+        "openai_api_key": "token-abc123",
+        "vllm_log": "/root/vllm.log",
+        "max_num_batched_tokens": 2048,
+        "max_model_len": 2048,
+        "max_num_seqs": 256
+    },
+    "scheduler_config": {
+        "num_instances": 4,
+        "instance_configurations": "../instance_configurations.json",
+        "scheduler_policy": "least_requests"
+    }
+}

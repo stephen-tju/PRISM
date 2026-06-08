@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use PRISM, please cite the ICDCS 2026 paper."
+title: "PRISM: Proactive Workload-Aware Optimization for Hybrid-Service in LMaaS Systems"
+authors:
+  - family-names: "Li"
+    given-names: "Yuting"
+  - family-names: "Qiu"
+    given-names: "Chao"
+  - family-names: "Huang"
+    given-names: "Shaoyuan"
+  - family-names: "Zhang"
+    given-names: "Tengwen"
+  - family-names: "Zhao"
+    given-names: "Yunfeng"
+  - family-names: "Wang"
+    given-names: "Xiaofei"
+year: 2026
+repository-code: "https://github.com/stephen-tju/PRISM"
+preferred-citation:
+  type: conference-paper
+  title: "Prism: Proactive Workload-Aware Optimization for Hybrid-Service in LMaaS Systems"
+  authors:
+    - family-names: "Li"
+      given-names: "Yuting"
+    - family-names: "Qiu"
+      given-names: "Chao"
+    - family-names: "Huang"
+      given-names: "Shaoyuan"
+    - family-names: "Zhang"
+      given-names: "Tengwen"
+    - family-names: "Zhao"
+      given-names: "Yunfeng"
+    - family-names: "Wang"
+      given-names: "Xiaofei"
+  conference:
+    name: "IEEE International Conference on Distributed Computing Systems"
+  year: 2026

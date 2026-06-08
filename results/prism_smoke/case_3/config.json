@@ -1,0 +1,79 @@
+{
+    "request_config": {
+        "request_num": 20,
+        "benchmark_duration": null,
+        "load": "uniform",
+        "load_dataset_path": null,
+        "seed": 7,
+        "random_prompt_lens_mean": 256,
+        "random_prompt_lens_range": 64,
+        "random_response_lens_mean": 256,
+        "random_response_lens_range": 64,
+        "mixing_propotion": 0.5,
+        "workload": "uniform",
+        "workload_trace_path": null,
+        "workload_timescale": 1.0,
+        "workload_sampling_interval": 1,
+        "workload_trace_range_L": 0.0,
+        "workload_trace_range_R": 1.0,
+        "qps": 100.0,
+        "coefficient_variation": 0.0,
+        "load_mode": "random_generated",
+        "workload_mode": "random_generated",
+        "dataset": "uniform"
+    },
+    "profile_config": {
+        "model_name": "meta-llama/Meta-Llama-3-8B",
+        "result_dir": ".\\results\\prism_smoke",
+        "case_path": ".\\results\\prism_smoke\\case_3",
+        "dry_run": true
+    },
+    "instance_config": {
+        "stream": true,
+        "temperature": 0.0,
+        "best_of": 1,
+        "top_k": 1,
+        "model_name": "meta-llama/Meta-Llama-3-8B",
+        "openai_api_key": "token-abc123",
+        "max_num_batched_tokens": 8192,
+        "max_model_len": 4096,
+        "max_num_seqs": 128
+    },
+    "scheduler_config": {
+        "num_instances": 2,
+        "instance_configurations": ".\\instance_configurations_4.json",
+        "scheduler_policy": "prism",
+        "scheduler_param": 4,
+        "scaler_policy": "none",
+        "scaler_interval": 300,
+        "req_predictor_policy": "prism_perceptron",
+        "req_predictor_model_path": "../saved_model/1_claases-1_prompt-1_resample.pth"
+    },
+    "prism_config": {
+        "response_history_size": 128,
+        "response_recency_decay": 0.96,
+        "prompt_similarity_sigma": 256.0,
+        "response_length_prior": 1.0,
+        "fallback_response_len": 256,
+        "response_prediction_mode": "expectation",
+        "random_seed": 7,
+        "routing_prefill_alpha": 1e-06,
+        "routing_decode_beta": 0.001,
+        "routing_heterogeneity_weight": 1.0,
+        "routing_congestion_weight": 1.0,
+        "slo_seconds": 30.0,
+        "per_token_memory_bytes": 1.0,
+        "peak_memory_capacity_tokens": 8192.0,
+        "scale_up_memory_threshold": 0.85,
+        "scale_down_memory_threshold": 0.2,
+        "scaling_violation_tolerance": 0.2,
+        "adaptive_scaling_interval": 10.0,
+        "instance_cold_start_seconds": 0.0,
+        "scaling_cooldown_seconds": 0.0,
+        "implementation_notes": {
+            "intra_instance_preemption": "The current artifact records PRISM pressure scores and routing state at the framework layer. Direct vLLM iteration-level preemption requires scheduler hooks below the OpenAI-compatible HTTP interface.",
+            "peak_memory": "Peak pressure is estimated from framework-visible request counters and lookahead state, matching the public serving API.",
+            "workload_forecast": "This artifact emphasizes online scheduling and adaptive tuning; periodic planning can be supplied through the same scaler API."
+        }
+    }
+}
